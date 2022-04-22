@@ -1,0 +1,33 @@
+.hero {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100vh;
+    user-select: none;
+}
+
+.hero-content {
+    position: absolute;
+    top: 32vh;
+    left: 10vw;
+    color: white;
+}
+
+.hero-text h1 {
+    font-weight: 800;
+    font-size: 4em;
+}
+
+.hero-text p {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-top: -20px;  
+}
+
+.hero-button {
+    color: rgb(0, 0, 0);
+    background-color: rgb(253, 179, 18);
+}

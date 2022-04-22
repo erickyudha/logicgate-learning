@@ -1,19 +1,18 @@
 import React from "react";
-import Hero from "./Hero";
-import Navbar from "./Navbar";
-import LearningPreview from "./LearningPreview";
-import QuizPreview from "./QuizPreview";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Learning from "./Learning";
+import Quiz from "./Quiz";
 
 export default function App() {
     return (
-        <div>
-            <Navbar />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/quiz" element={<Quiz />} />
+                <Route path="/learning" element={<Learning />} />
+                <Route path="/" element={<Home />} />
 
-
-            <Hero />
-            <LearningPreview />
-            <QuizPreview />
-
-        </div>
+            </Routes>
+        </BrowserRouter>
     )
 }

@@ -3,6 +3,13 @@ import "../styles/hero.css";
 import techPlanet from "../images/techplanet.jpg"
 
 export default function Hero() {
+    function scrollDown() {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth"
+        });
+    }
+
     return (
         <div className="hero">
             <img className="hero-img" src={techPlanet} alt="tech-planet" draggable={false} />
@@ -14,7 +21,7 @@ export default function Hero() {
                     Learn how to use LogicGate to solve problems.
                     </p>
                 </div>
-                <button className="hero-button my-button" type="button">Learn More</button>
+                <button className="hero-button my-button" type="button" onClick={scrollDown}>Learn More</button>
             </div>
             
         </div>

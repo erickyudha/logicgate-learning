@@ -1,7 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
-export default function Navbar() {
+export default function Navbar(props) {
+    let navItems = [];
+    if (props.location == "home") {
+        navItems = [
+            <Link id="navItem1" className="nav-item nav-link active" to="/">Home</Link>,
+            <Link id="navItem2" className="nav-item nav-link" to="/learning">Learning</Link>,
+            <Link id="navItem3" className="nav-item nav-link" to="/quiz">Quiz</Link>
+        ];
+    } else if (props.location == "learning") {
+        navItems = [
+            <Link id="navItem1" className="nav-item nav-link" to="/">Home</Link>,
+            <Link id="navItem2" className="nav-item nav-link active" to="/learning">Learning</Link>,
+            <Link id="navItem3" className="nav-item nav-link" to="/quiz">Quiz</Link>
+        ];
+    } else if (props.location == "quiz") {
+        navItems = [
+            <Link id="navItem1" className="nav-item nav-link" to="/">Home</Link>,
+            <Link id="navItem2" className="nav-item nav-link" to="/learning">Learning</Link>,
+            <Link id="navItem3" className="nav-item nav-link active" to="/quiz">Quiz</Link>
+        ];
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">Learn LogicGate</a>
@@ -10,9 +32,7 @@ export default function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                <a className="nav-item nav-link active" href="#">Home <span className="sr-only">(current)</span></a>
-                <a className="nav-item nav-link" href="#">Learning</a>
-                <a className="nav-item nav-link" href="#">Quiz</a>
+                    {navItems}
                 </div>
             </div>
         </nav>

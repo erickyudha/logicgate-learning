@@ -1,1 +1,0 @@
-# logicgate-learning

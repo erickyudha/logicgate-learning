@@ -1,9 +1,11 @@
 import React from "react";
 import "../styles/quizpreview.css";
+import trophyImage from "../images/trophy-solid.svg";
 
 export default function QuizPreview() {
     return (
         <div className="quiz-preview">
+            <img src={trophyImage} alt="Trophy Image" />
             <div className="quiz-preview-content">
                 <h1>Quiz</h1>
                 <p>

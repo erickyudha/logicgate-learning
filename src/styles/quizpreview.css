@@ -1,7 +1,7 @@
 .quiz-preview {
     width: 100vw;
     height: 100vh;
-    background-color: #e69c13;
+    background-color: #135de6;
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;

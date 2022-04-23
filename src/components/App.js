@@ -6,6 +6,7 @@ import Learning from "./Learning";
 import Navbar from "./Navbar";
 import Quiz from "./Quiz";
 import QuizCountdown from "./QuizCountdown";
+import StartQuiz from "./StartQuiz";
 
 export default function App() {
 
@@ -13,7 +14,7 @@ export default function App() {
         <BrowserRouter>
             
             <Routes>
-                <Route path="/start-quiz" element={<QuizCountdown initialSeconds={5} questionNum={1} />} />
+                <Route path="/start-quiz" element={<StartQuiz />} />
                 <Route path="/quiz" element={<Quiz />} />
                 <Route path="/learning" element={<Learning />} />
                 <Route path="/" element={<Home />} />

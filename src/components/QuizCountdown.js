@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import "../styles/quizcountdown.css";
 
 export default function QuizCountdown(props) {
-    const { initialSeconds = 0, questionNum = 1, score=0 } = props;
-    const [seconds, setSeconds ] =  useState(initialSeconds);
+    const { countdown = 0, questionNum = 1, score=0 } = props;
+    const [seconds, setSeconds ] =  useState(countdown);
 
     useEffect(()=>{
         let myInterval = setInterval(() => {

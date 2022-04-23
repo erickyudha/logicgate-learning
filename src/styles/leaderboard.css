@@ -30,7 +30,7 @@
 .leaderboards {
     width: 100%;
     background-color: #135de6;
-    min-height: 100vh;
+    min-height: 120vh;
     height: fit-content;
 }
 
@@ -54,9 +54,8 @@
     width: 100%;
     height: fit-content;
 
-    padding: 100px;
+    padding: 80px;
     color: white;
-    padding-top: 80px;
 
     display: grid;
     align-items: center;
@@ -65,8 +64,8 @@
 
 .leaderboards-row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 10px;
     align-items: center;
     justify-items: center;
     font-size: 1.5em;
@@ -74,12 +73,14 @@
 
 .leaderboards-row-num {
     font-weight: 600;
+    justify-self: start;
 }
 
 .leaderboards-row-name {
     font-weight: 800;
     color: #e9d62f;
     font-size: 1.3em;
+    justify-self: start;
 }
 
 .leaderboards-row-score {

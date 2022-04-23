@@ -6,7 +6,7 @@ export default function Leaderboards() {
     return (
         <main className="leaderboards">
             <div className="leaderboards-header">
-                <img src={winnerImg} alt="winner" />
+                <img draggable={false} src={winnerImg} alt="winner" />
                 <h1>Leaderboards</h1>
                 <div className="leaderboards-header-content">
                     <button className="my-button">Today</button>

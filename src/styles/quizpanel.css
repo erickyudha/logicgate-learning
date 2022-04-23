@@ -1,8 +1,17 @@
 .quiz-panel {
-    background-color: #c4c4c4;
+    background-color: #e9d62f;
     width: 40vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+    display: grid;
+    padding: 100px 40px;
+    justify-items: center;
+    align-items: center;
+}
+
+.quiz-panel img {
+    width: 60%;
+    height: auto;
 }

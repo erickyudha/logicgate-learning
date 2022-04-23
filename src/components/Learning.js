@@ -1,5 +1,5 @@
 import React from "react";
-import LearningSidebar from "./LearnigSidebar";
+import LearningSidebar from "./LearningSidebar";
 import LearningContent from "./LearningContent";
 import Navbar from "./Navbar";
 import "../styles/learning.css";

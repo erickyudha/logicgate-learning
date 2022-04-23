@@ -1,0 +1,6 @@
+.quiz-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto;
+    justify-items: center;
+}

@@ -1,0 +1,88 @@
+.leaderboards-header {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: 
+        "logo title"
+        "logo button";
+    padding: 30px 80px 0 30px;
+}
+
+.leaderboards-header h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
+    font-size: 2.5em;
+    color: #fff;
+    grid-area: title;
+    align-self: end;
+}
+
+.leaderboards-header img {
+    height: 250px;
+    margin: 0;
+    padding: 0;
+    grid-area: logo;
+}
+
+.leaderboards {
+    width: 100%;
+    background-color: #135de6;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+.leaderboards-header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+    grid-area: button;
+    align-self: start;
+    margin-top: 20px;
+}
+
+.leaderboards-header-content button {
+    font-size: 1.2em;
+}
+
+.leaderboards-content {
+    background-color: #0e44a8;
+    width: 100%;
+    height: fit-content;
+
+    padding: 100px;
+    color: white;
+    padding-top: 80px;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.leaderboards-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.5em;
+}
+
+.leaderboards-row-num {
+    font-weight: 600;
+}
+
+.leaderboards-row-name {
+    font-weight: 800;
+    color: #e9d62f;
+    font-size: 1.3em;
+}
+
+.leaderboards-row-score {
+    font-weight: 600;
+    font-size: 1.2em;
+}

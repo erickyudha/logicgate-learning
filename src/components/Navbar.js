@@ -6,21 +6,21 @@ export default function Navbar(props) {
     let navItems = [];
     if (props.location == "home") {
         navItems = [
-            <Link id="navItem1" className="nav-item nav-link active" to="/">Home</Link>,
-            <Link id="navItem2" className="nav-item nav-link" to="/learning">Learning</Link>,
-            <Link id="navItem3" className="nav-item nav-link" to="/quiz">Quiz</Link>
+            <Link id="navItem1" key="navItem1" className="nav-item nav-link active" to="/">Home</Link>,
+            <Link id="navItem2" key="navItem2" className="nav-item nav-link" to="/learning">Learning</Link>,
+            <Link id="navItem3" key="navItem3" className="nav-item nav-link" to="/quiz">Quiz</Link>
         ];
     } else if (props.location == "learning") {
         navItems = [
-            <Link id="navItem1" className="nav-item nav-link" to="/">Home</Link>,
-            <Link id="navItem2" className="nav-item nav-link active" to="/learning">Learning</Link>,
-            <Link id="navItem3" className="nav-item nav-link" to="/quiz">Quiz</Link>
+            <Link id="navItem1" key="navItem1" className="nav-item nav-link" to="/">Home</Link>,
+            <Link id="navItem2" key="navItem2" className="nav-item nav-link active" to="/learning">Learning</Link>,
+            <Link id="navItem3" key="navItem3" className="nav-item nav-link" to="/quiz">Quiz</Link>
         ];
     } else if (props.location == "quiz") {
         navItems = [
-            <Link id="navItem1" className="nav-item nav-link" to="/">Home</Link>,
-            <Link id="navItem2" className="nav-item nav-link" to="/learning">Learning</Link>,
-            <Link id="navItem3" className="nav-item nav-link active" to="/quiz">Quiz</Link>
+            <Link id="navItem1" key="navItem1" className="nav-item nav-link" to="/">Home</Link>,
+            <Link id="navItem2" key="navItem2" className="nav-item nav-link" to="/learning">Learning</Link>,
+            <Link id="navItem3" key="navItem3" className="nav-item nav-link active" to="/quiz">Quiz</Link>
         ];
     }
 

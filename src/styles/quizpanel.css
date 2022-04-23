@@ -15,3 +15,13 @@
     width: 60%;
     height: auto;
 }
+
+.quiz-panel button {
+    background-color: #1b3d7c;
+    color: #fff;
+    font-weight: 600;
+}
+
+.quiz-panel button:hover {
+    background-color: #326bd6;
+}

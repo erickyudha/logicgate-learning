@@ -3,31 +3,59 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 3fr 1fr;
     justify-items: center;
     justify-content: center;
     
-    background-color: rgb(41, 41, 41);
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    overflow-y: hidden;
 }
 
 .question-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "question-container question-container" "answer-container answer-container";
-    justify-items: center;
     align-items: center;
+    justify-items: center;
+    width: 100vw;
 }
 
 .answer-section {
+    width: 100vw;
+    padding: 15px;
+}
+
+.choice-4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    width: 100vw;
-    grid-gap: 10px;
-    padding: 15px;
+    grid-gap: 15px;
 }
+
+.choice-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.question-image {
+    grid-template-rows: 3fr 1fr;
+}
+
+.question-image img {
+    height: 300px;
+    margin-top: 20px;
+}
+
+.question-image .question-text {
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.question-no-image .question-text {
+    font-weight: 600;
+    font-size: 2em;
+}
+
 
 .answer-section button {
     border: none;

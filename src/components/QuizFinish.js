@@ -5,7 +5,9 @@ import DoneGreen from "../images/Done-green.gif";
 import DoneRed from "../images/Done-red.gif";
 
 export default function QuizFinish(props) {
-    const { score, correctAnswer, questionTotal, bgClass } = props;
+    const { score, correctAnswer, questionTotal, isAnswerCorrect } = props;
+    const bgClass = (isAnswerCorrect) ? "bg-green" : "bg-red";
+
     return (
         <div className={`quiz-finish-screen ${bgClass}`}>
             <img draggable={false} src={(bgClass == "bg-green") ? DoneGreen : DoneRed} />

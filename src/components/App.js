@@ -12,8 +12,7 @@ export default function App() {
         <BrowserRouter>
             
             <Routes>
-                <Route path="/test" element= {<QuizFinish name="Erick" score={9999} correctAnswer={4} questionTotal={5} bgClass="bg-green" />} />
-                <Route path="/start-quiz" element={<SimpleQuiz />} />
+                <Route path="/start-quiz" element={<SimpleQuiz questionNumber={10} />} />
                 <Route path="/quiz" element={<Quiz />} />
                 <Route path="/learning" element={<Learning />} />
                 <Route path="/" element={<Home />} />

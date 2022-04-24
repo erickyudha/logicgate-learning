@@ -4,56 +4,20 @@ import "../styles/simplequiz.css";
 import { useEffect } from "react";
 import QuizCountdown from "./QuizCountdown";
 import QuizFinish from "./QuizFinish";
+import questionData from "../data/question";
 
 export default function Quiz(props) {
-    const {name} = props;
-	const questions = [
-		{
-			questionText: 'What is the capital of France?',
-			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'Who is CEO of Tesla?',
-			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'The iPhone was created by which company?',
-			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'How many Harry Potter books are there?',
-			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
-			],
-		},
-        {
-			questionText: 'How many Harry Potter books are there?',
-			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
-			],
-		},
-	];
+	const { questionNumber } = props;
+	function ShuffleArray() {
+		const array = questionData;
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+		return array;
+	}
+
+	const questions = ShuffleArray(questionData).slice(0, questionNumber);
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
@@ -62,15 +26,15 @@ export default function Quiz(props) {
     const isAnswerCorrect = useRef(null);
     const startTime = useRef(null);
     const endTime = useRef(null);
-    const maxScore = 10000;
+    const eachScore = 2000;
 	const correctAnswer = useRef(0);
 
 	const handleAnswerOptionClick = (isCorrect) => {
         isAnswerCorrect.current = isCorrect;
         function calculateScore(startSeconds, endSeconds) {
             const timeTaken = endSeconds - startSeconds;
-            const score = (maxScore / questions.length) - (timeTaken * timeTaken);
-            return (score > 0) ? score : 0;
+            const score = Math.ceil(eachScore - ((timeTaken * timeTaken) + (timeTaken * 5)));
+            return (score > 0 && score <= eachScore) ? score : 100;
         }
 
 		if (isCorrect) {
@@ -93,14 +57,18 @@ export default function Quiz(props) {
     };
         
 
-    const loadingScreen = (isCorrect) => {
-        return <QuizCountdown countdown = {5} questionNum={currentQuestion + 1} score={score} isCorrect={isAnswerCorrect.current} />;
+    const loadingScreen = () => {
+        return <QuizCountdown countdown = {2} questionNum={currentQuestion + 1} score={score} isCorrect={isAnswerCorrect.current} />;
     }
+
+	const loadFinishScreen = () => {
+		return <QuizFinish score={score} correctAnswer={correctAnswer.current} questionTotal={questions.length} isAnswerCorrect={isAnswerCorrect.current} />
+	}
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowLoading(false);
-        }, 5000);
+        }, 2000);
         return () => {
             clearTimeout(timer);
             startTime.current = new Date().getSeconds();
@@ -112,16 +80,17 @@ export default function Quiz(props) {
             {showLoading ? loadingScreen() : null}
 
 			{showScore ? (
-				<QuizFinish score={score} correctAnswer={correctAnswer.current} questionTotal={questions.length} bgClass={isAnswerCorrect ? "bg-green" : "bg-red"} />
+				loadFinishScreen()
 			) : (
 				<div className="quiz-container">
-					<div className='question-section'>
-						<div className='question-count'>
-							<span>Question {currentQuestion + 1}</span>/{questions.length}
-						</div>
+					<div className={`question-section ${questions[currentQuestion].withImage ? "question-image" : "question-no-image"}`}>
+						{questions[currentQuestion].withImage ? (
+							<img src={questions[currentQuestion].imageUrl} alt={questions[currentQuestion].question} />
+						) : null}
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
-					<div className='answer-section'>
+					{console.log(questions[currentQuestion].options)}
+					<div className={`answer-section ${(questions[currentQuestion].options == 2) ? "choice-2" : "choice-4"}`}>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}

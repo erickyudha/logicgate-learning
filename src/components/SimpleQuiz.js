@@ -58,34 +58,41 @@ export default function Quiz(props) {
 	const [showScore, setShowScore] = useState(false);
     const [showLoading, setShowLoading] = useState(true);
 	const [score, setScore] = useState(0);
+    const isAnswerCorrect = useRef(null);
     const startTime = useRef(null);
     const endTime = useRef(null);
     const maxScore = 10000;
 
 	const handleAnswerOptionClick = (isCorrect) => {
+        isAnswerCorrect.current = isCorrect;
         function calculateScore(startSeconds, endSeconds) {
             const timeTaken = endSeconds - startSeconds;
             const score = (maxScore / questions.length) - (timeTaken * timeTaken);
             return (score > 0) ? score : 0;
         }
+
 		if (isCorrect) {
             endTime.current = new Date().getSeconds();
 			setScore(score + calculateScore(startTime.current, endTime.current));
 		}
 
-		const nextQuestion = currentQuestion + 1;
+        handleNextQuestion();
+	};
+
+    const handleNextQuestion = () => {
+        const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
             setShowLoading(true);
 		} else {
 			setShowScore(true);
 		}
-	};
+    };
+        
 
-    const loadingScreen = () => {
-        return <QuizCountdown countdown = {5} questionNum={currentQuestion + 1} score={score} />
+    const loadingScreen = (isCorrect) => {
+        return <QuizCountdown countdown = {5} questionNum={currentQuestion + 1} score={score} isCorrect={isAnswerCorrect.current} />;
     }
-
 
     useEffect(() => {
         const timer = setTimeout(() => {

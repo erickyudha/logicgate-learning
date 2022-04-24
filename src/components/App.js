@@ -1,15 +1,8 @@
 import React from "react";
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CountdownBar from "./CountdownBar";
 import Home from "./Home";
 import Learning from "./Learning";
-import Navbar from "./Navbar";
 import Quiz from "./Quiz";
-import QuizCountdown from "./QuizCountdown";
-import QuizMain from "./QuizMain";
-import QuizSession from "./QuizSession";
-import StartQuiz from "./StartQuiz";
 import SimpleQuiz from "./SimpleQuiz";
 
 export default function App() {

@@ -1,6 +1,7 @@
 .learning-content {
     margin-top: 80px;
     padding: 0px 40px 50px 40px;
+    min-height: 100vh;
 }
 
 .material-title {

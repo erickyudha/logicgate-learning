@@ -3,14 +3,16 @@ import { useState } from "react";
 import "../styles/learningsidebar.css";
 
 export default function LearningSidebar(props) {
+    const {titleList, getFunction} = props;
     let [ selectedButton, setSelectedButton ]  = useState("Logic Gates");
 
     const handleClick = (e) => {
+        getFunction(e.target.innerText);
         setSelectedButton(() => e.target.innerText);
         console.log("test");
     };
 
-    let materialList = ["Logic Gates", "And Gate", "Or Gate", "Not Gate", "Nand Gate", "Nor Gate"];
+    let materialList = titleList;
     let buttonList = materialList.map(material => {
         return (
             <button className={material === selectedButton ? "learning-sidebar-list-active" : ""} key={material} onClick={handleClick} >

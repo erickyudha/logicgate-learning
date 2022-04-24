@@ -1,37 +1,25 @@
 import React from "react";
 import "../styles/learningcontent.css";
 import contohTabel from "../images/contoh-tabel-kebenaran.jpg";
+import material from "../data/material"
 
-export default function LearningContent() {
+export default function LearningContent(props) {
+    const { materialData=material[1] } = props;
+    const materialElements = materialData.data.map(material => {
+        return (
+            <div className="material-content-item">
+                <h2>{material.subtitle}</h2>
+                {material.type === "text" && <p>{material.content}</p>}
+                {material.type === "image" && <img src={material.content} alt="gambar" />}
+                {material.type === "video" && <iframe width="560" height="315" src={material.content} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
+            </div>
+        )
+    })
     return (
         <div className="learning-content">
-            <h1 className="material-title">Logic Gates</h1>
+            <h1 className="material-title">{materialData.title}</h1>
             <div className="material-content-list">
-
-                <div className="material-content-item">
-                    <h2>Pengertian</h2>
-                    <p>
-                        Logic adalah suatu sistem logika yang menggunakan konsep matematika.
-                        Logic dapat digunakan untuk mengatur suatu konsep matematika.
-                        Logic dapat digunakan untuk mengatur suatu konsep matematika.
-                        Logic dapat digunakan untuk mengatur suatu konsep matematika.
-                    </p>
-                </div>
-
-                <div className="material-content-item">
-                    <h2>Gambar Gerbang Logika</h2>
-                    <img src={contohTabel} alt="Logic" />
-                </div>
-
-                <div className="material-content-item">
-                    <h2>Simbol Logika dan Tabel Kebenaran</h2>
-                    <img src={contohTabel} alt="Logic" />
-                </div>
-
-                <div className="material-content-item">
-                    <h2>Video Penjelasan</h2>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8AXgd3ua2xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                {materialElements}
             </div>
         </div>
     );

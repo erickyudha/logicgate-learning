@@ -15,7 +15,7 @@ export default [
             {
                 subtitle: "Video Penjelasan",
                 type: "video",
-                content: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+                content: "https://www.youtube.com/embed/dQw4w9WgXcQ&autoplay=1"
             }
         ]
     },
@@ -35,7 +35,7 @@ export default [
             {
                 subtitle: "Video Penjelasan",
                 type: "video",
-                content: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+                content: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
             }
         ]
     },

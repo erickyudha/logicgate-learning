@@ -1,4 +1,4 @@
-export default list = [
+export default [
     {
         "id": 1,
         "withImage": true,

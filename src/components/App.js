@@ -10,6 +10,7 @@ import QuizCountdown from "./QuizCountdown";
 import QuizMain from "./QuizMain";
 import QuizSession from "./QuizSession";
 import StartQuiz from "./StartQuiz";
+import SimpleQuiz from "./SimpleQuiz";
 
 export default function App() {
 
@@ -17,8 +18,8 @@ export default function App() {
         <BrowserRouter>
             
             <Routes>
-                <Route path="/test" element= {<QuizSession />} />
-                <Route path="/start-quiz" element={<StartQuiz />} />
+                <Route path="/test" element= {<SimpleQuiz />} />
+                <Route path="/start-quiz" element={<SimpleQuiz />} />
                 <Route path="/quiz" element={<Quiz />} />
                 <Route path="/learning" element={<Learning />} />
                 <Route path="/" element={<Home />} />

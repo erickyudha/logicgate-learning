@@ -1,0 +1,39 @@
+.quiz-container {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    
+    background-color: rgb(41, 41, 41);
+    color: rgb(255, 255, 255);
+}
+
+.question-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "question-container question-container" "answer-container answer-container";
+    justify-items: center;
+    align-items: center;
+}
+
+.answer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100vw;
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+.answer-section button {
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(149, 76, 197);
+    color: white;
+    font-weight: 600;
+    font-size: 1.2em;
+}

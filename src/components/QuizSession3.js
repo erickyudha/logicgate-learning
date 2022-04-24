@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import QuizCountdown from "./QuizCountdown";
-import QuizMain from "./QuizMain";
+import QuizCountdown from "./QuizCountdown3";
+import QuizMain from "./QuizMain3";
 import CorrectScreen from "./CorrectScreen";
 import IncorrectScreen from "./IncorrectScreen";
 

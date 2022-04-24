@@ -25,3 +25,16 @@
 .quiz-panel button:hover {
     background-color: #326bd6;
 }
+
+.start-quiz-btn {
+    font-weight: 600;
+    padding: 15px 50px;
+    color: white;
+    background-color: #1b3d7c;
+}
+
+.start-quiz-btn:hover {
+    color: #fff;
+    background-color: #326bd6;
+    text-decoration: none;
+}

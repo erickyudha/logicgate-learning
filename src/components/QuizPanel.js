@@ -7,9 +7,7 @@ export default function QuizPanel() {
   return (
     <div className="quiz-panel">
       <img draggable={false} src={onlineTest} alt="online test" />
-      <Link to="/start-quiz">
-        <button className="start-quiz-btn">Start Quiz</button>
-      </Link>
+      <Link className="start-quiz-btn" to="/start-quiz">Start Quiz</Link>
     </div>
   );
 }

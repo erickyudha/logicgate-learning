@@ -3,6 +3,7 @@ import { useState } from "react";
 import "../styles/simplequiz.css";
 import { useEffect } from "react";
 import QuizCountdown from "./QuizCountdown";
+import QuizFinish from "./QuizFinish";
 
 export default function Quiz(props) {
     const {name} = props;
@@ -62,6 +63,7 @@ export default function Quiz(props) {
     const startTime = useRef(null);
     const endTime = useRef(null);
     const maxScore = 10000;
+	const correctAnswer = useRef(0);
 
 	const handleAnswerOptionClick = (isCorrect) => {
         isAnswerCorrect.current = isCorrect;
@@ -73,6 +75,7 @@ export default function Quiz(props) {
 
 		if (isCorrect) {
             endTime.current = new Date().getSeconds();
+			correctAnswer.current++;
 			setScore(score + calculateScore(startTime.current, endTime.current));
 		}
 
@@ -109,9 +112,7 @@ export default function Quiz(props) {
             {showLoading ? loadingScreen() : null}
 
 			{showScore ? (
-				<div className='score-section'>
-					You scored {score} out of {questions.length}
-				</div>
+				<QuizFinish score={score} correctAnswer={correctAnswer.current} questionTotal={questions.length} bgClass={isAnswerCorrect ? "bg-green" : "bg-red"} />
 			) : (
 				<div className="quiz-container">
 					<div className='question-section'>

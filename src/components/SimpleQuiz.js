@@ -58,7 +58,7 @@ export default function Quiz(props) {
         
 
     const loadingScreen = () => {
-        return <QuizCountdown countdown = {2} questionNum={currentQuestion + 1} score={score} isCorrect={isAnswerCorrect.current} />;
+        return <QuizCountdown countdown = {3} questionNum={currentQuestion + 1} score={score} isCorrect={isAnswerCorrect.current} />;
     }
 
 	const loadFinishScreen = () => {
@@ -68,7 +68,7 @@ export default function Quiz(props) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowLoading(false);
-        }, 2000);
+        }, 4000);
         return () => {
             clearTimeout(timer);
             startTime.current = new Date().getSeconds();

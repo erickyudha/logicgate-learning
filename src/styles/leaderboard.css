@@ -69,6 +69,7 @@
     align-items: center;
     justify-items: center;
     font-size: 1.5em;
+    width: 100%;
 }
 
 .leaderboards-row-num {
@@ -81,9 +82,39 @@
     color: #e9d62f;
     font-size: 1.3em;
     justify-self: start;
+    width: 100%;
 }
 
 .leaderboards-row-score {
     font-weight: 600;
     font-size: 1.2em;
+    justify-self: end;
+}
+
+.no-record {
+    font-size: 1.5em;
+    color: #e9d62f;
+    font-weight: 800;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.lb-btn {
+    background-color: #e9d62f;
+    font-weight: 600;
+}
+
+.lb-btn:hover {
+    background-color: #f1e14a;
+    color: #0e44a8;
+}
+
+.lb-active-btn {
+    background-color: #f1e04aa6;
+    color: #000000;
+}
+
+.lb-active-btn:hover {
+    background-color: #f1e04aa6;
+    color: #0e44a8;
 }

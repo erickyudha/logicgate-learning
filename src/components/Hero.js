@@ -18,7 +18,7 @@ export default function Hero() {
                 <div className="hero-text">
                     <h1>Learn LogicGate</h1>
                     <p>
-                    Learn how to use LogicGate to solve problems.
+                        With online learning and interactive practice
                     </p>
                 </div>
                 <button className="hero-button my-button" type="button" onClick={scrollDown}>Learn More</button>

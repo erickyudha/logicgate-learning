@@ -1,81 +1,36 @@
+const text1 = "Gerbang logika atau logic gates adalah proses pengolahan input bilangan biner dengan teori matematika boolean. Seperti yang kita ketahui, bilangan biner sendiri terdiri dari angka 1 dan 0." 
+const text2 = `Logic gate ini direpresentasikan menggunakan tabel kebenaran. Jika memiliki nilai benar (true) akan ditunjukan dengan angka “1”. Sebaliknya, jika memiliki nilai salah (false) akan ditunjukan dengan angka “0”.`
+const textA = text1 + text2;
+
 export default [
     {
-        title: "Logic Gates",
+        title: "Logic Gate",
         data: [
             {
                 subtitle: "Pengertian",
                 type: "text",
-                content: "Logic adalah suatu sistem logika yang menggunakan konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika."
+                content: textA
+                
             },
             {
-                subtitle: "Gambar Gerbang Logika",
-                type: "image",
-                content: "https://www.w3schools.com/images/w3schools_green.jpg"
-            },
-            {
-                subtitle: "Video Penjelasan",
-                type: "video",
-                content: "https://www.youtube.com/embed/dQw4w9WgXcQ&autoplay=1"
-            }
-        ]
-    },
-    {
-        title: "And Gates",
-        data: [
-            {
-                subtitle: "Pengertian",
+                subtitle: "Fungsi Gerbang Logika",
                 type: "text",
-                content: "Logic adalah suatu sistem logika yang menggunakan konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika."
+                content: "Gerbang logika memiliki fungsi untuk melakukan fungsi logika dasar untuk membentuk sirkuit digital yang terintegrasi. Kebanyakan logic gate menggunakan bilangan biner 0 atau 1 bisa juga disebut true atau false. Biasanya terdiri dari dua buah nilai input dan satu nilai output."
             },
             {
-                subtitle: "Gambar Gerbang Logika",
-                type: "image",
-                content: "https://www.w3schools.com/images/w3schools_green.jpg"
-            },
-            {
-                subtitle: "Video Penjelasan",
-                type: "video",
-                content: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-            }
-        ]
-    },
-    {
-        title: "Or Gates",
-        data: [
-            {
-                subtitle: "Pengertian",
+                subtitle: "Tabel Kebenaran",
                 type: "text",
-                content: "Logic adalah suatu sistem logika yang menggunakan konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika."
+                content: "Tabel kebenaran adalah tabel yang digunakan untuk melihat nilai kebenaran dari suatu pernyataan. Di sini tabel kebenaran dapat diartikan sebagai tabel yang berisi kombinasi-kombinasi variabel masukan (input) yang menghasilkan keluaran (output) yang logis."
             },
             {
-                subtitle: "Gambar Gerbang Logika",
+                subtitle: "Contoh Gambar",
                 type: "image",
-                content: "https://www.w3schools.com/images/w3schools_green.jpg"
+                content: "https://www.nutsvolts.com/uploads/articles/NV_0501_Byers_Large.jpg"
             },
             {
                 subtitle: "Video Penjelasan",
                 type: "video",
-                content: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            }
-        ]
-    },
-    {
-        title: "Xor Gates",
-        data: [
-            {
-                subtitle: "Pengertian",
-                type: "text",
-                content: "Logic adalah suatu sistem logika yang menggunakan konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika. Logic dapat digunakan untuk mengatur suatu konsep matematika."
-            },
-            {
-                subtitle: "Gambar Gerbang Logika",
-                type: "image",
-                content: "https://www.w3schools.com/images/w3schools_green.jpg"
-            },
-            {
-                subtitle: "Video Penjelasan",
-                type: "video",
-                content: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+                content: "https://www.youtube.com/embed/gI-qXk7XojA"
             }
         ]
     },

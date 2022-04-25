@@ -17,7 +17,7 @@ export default function Quiz(props) {
 		return array;
 	}
 
-	const questions = ShuffleArray(questionData).slice(0, questionNumber);
+	const questions = useRef(ShuffleArray(questionData).slice(0, questionNumber));
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
@@ -48,7 +48,8 @@ export default function Quiz(props) {
 
     const handleNextQuestion = () => {
         const nextQuestion = currentQuestion + 1;
-		if (nextQuestion < questions.length) {
+		if (nextQuestion < questions.current.length) {
+			console.log(questions.current[nextQuestion]);
 			setCurrentQuestion(nextQuestion);
             setShowLoading(true);
 		} else {
@@ -62,7 +63,7 @@ export default function Quiz(props) {
     }
 
 	const loadFinishScreen = () => {
-		return <QuizFinish score={score} correctAnswer={correctAnswer.current} questionTotal={questions.length} isAnswerCorrect={isAnswerCorrect.current} />
+		return <QuizFinish score={score} correctAnswer={correctAnswer.current} questionTotal={questions.current.length} isAnswerCorrect={isAnswerCorrect.current} />
 	}
 
     useEffect(() => {
@@ -83,15 +84,14 @@ export default function Quiz(props) {
 				loadFinishScreen()
 			) : (
 				<div className="quiz-container">
-					<div className={`question-section ${questions[currentQuestion].withImage ? "question-image" : "question-no-image"}`}>
-						{questions[currentQuestion].withImage ? (
-							<img src={questions[currentQuestion].imageUrl} alt={questions[currentQuestion].question} />
+					<div className={`question-section ${questions.current[currentQuestion].withImage ? "question-image" : "question-no-image"}`}>
+						{questions.current[currentQuestion].withImage ? (
+							<img src={questions.current[currentQuestion].imageUrl} alt={questions.current[currentQuestion].question} />
 						) : null}
-						<div className='question-text'>{questions[currentQuestion].questionText}</div>
+						<div className='question-text'>{questions.current[currentQuestion].questionText}</div>
 					</div>
-					{console.log(questions[currentQuestion].options)}
-					<div className={`answer-section ${(questions[currentQuestion].options == 2) ? "choice-2" : "choice-4"}`}>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
+					<div className={`answer-section ${(questions.current[currentQuestion].options == 2) ? "choice-2" : "choice-4"}`}>
+						{questions.current[currentQuestion].answerOptions.map((answerOption) => (
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>

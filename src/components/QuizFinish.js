@@ -14,7 +14,6 @@ export default function QuizFinish(props) {
     
 
     function setNameData(e) {
-        console.log(e.target.value);
         setName(e.target.value);
     }
 
@@ -50,11 +49,10 @@ export default function QuizFinish(props) {
                     body: JSON.stringify(quizData)
                 });
                 const data = await response.json();
-                console.log(data);
             }
             postData();
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
         }
     }
 

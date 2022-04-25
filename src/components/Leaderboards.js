@@ -9,7 +9,6 @@ export default function Leaderboards() {
     const [ leaderboardData, setLeaderboardData ] = useState([]);
 
     function setLeaderboard(e) {
-        console.log(e.target.id);
         setLeaderboardActive(e.target.id);
     }
 
@@ -30,12 +29,10 @@ export default function Leaderboards() {
     })
 
     useEffect(() => {
-        console.log("Leaderboards.js: useEffect()");
         if (leaderboardActive === "today") {
             const fetchToday = async () => {
                 const response = await fetch(`${Api.baseUrl}/leaderboards/today`);
                 const data = await response.json();
-                console.log(data.data);
                 setLeaderboardData(data.data);
             }
             fetchToday();
@@ -43,7 +40,6 @@ export default function Leaderboards() {
             const fetchAllTime = async () => {
                 const response = await fetch(`${Api.baseUrl}/leaderboards/alltime`);
                 const data = await response.json();
-                console.log(data.data);
                 setLeaderboardData(data.data);
             }
             fetchAllTime();

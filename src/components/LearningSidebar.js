@@ -9,7 +9,6 @@ export default function LearningSidebar(props) {
     const handleClick = (e) => {
         getFunction(e.target.innerText);
         setSelectedButton(() => e.target.innerText);
-        console.log("test");
     };
 
     let materialList = titleList;

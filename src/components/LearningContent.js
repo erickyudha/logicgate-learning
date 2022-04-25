@@ -11,6 +11,7 @@ export default function LearningContent(props) {
                 <h2>{material.subtitle}</h2>
                 {material.type === "text" && <p>{material.content}</p>}
                 {material.type === "image" && <img src={material.content} alt="gambar" />}
+                {material.type === "special" && <img src={material.content} alt="gambar" style={{width: "100%", height: "auto"}} />}
                 {material.type === "video" && <iframe width="560" height="315" src={material.content} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
             </div>
         )
